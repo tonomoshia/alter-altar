@@ -15,10 +15,11 @@
     @mixin-content;
   }
 }
+
 @define-mixin clearfix {
-    &::after {
+  &::after {
     content: "";
     clear: both;
     display: table;
-}
+  }
 }
