@@ -1109,6 +1109,7 @@ Instead edit gulp/templates/sprite */
 }
 
 .site-header {
+  padding: 10px 0;
   position: absolute;
   width: 100%;
   z-index: 2;
@@ -1117,6 +1118,13 @@ Instead edit gulp/templates/sprite */
 
 .site-header__btn-container {
   float: right;
+}
+
+.site-header__logo {
+  position: absolute;
+  top: 0;
+  background-color: #2f5572;
+  padding: 25px 36px;
 }
 
 .primary-nav--pull-right {
@@ -1144,4 +1152,5 @@ Instead edit gulp/templates/sprite */
   color: #FFF;
   font-weight: 300;
   text-decoration: none;
+  padding: 12px 0;
 }
