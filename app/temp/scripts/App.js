@@ -9908,6 +9908,8 @@ return jQuery;
 var $ = __webpack_require__(1);
 var Person = __webpack_require__(0);
 
+alert("ABC 321");
+
 var john = new Person("John Doe", "blue");
 john.greet();
 
