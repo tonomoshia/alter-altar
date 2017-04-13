@@ -1296,13 +1296,13 @@ Instead edit gulp/templates/sprite */
   }
 }
 
-.primary-nav li: last-child {
+.primary-nav li:last-child {
   padding-right: 0;
 }
 
 @media (min-width: 800px) {
 
-  .primary-nav li: last-child {
+  .primary-nav li:last-child {
     padding-right: 20px;
   }
 }
@@ -1320,9 +1320,13 @@ Instead edit gulp/templates/sprite */
 @media (min-width: 800px) {
 
   .primary-nav a {
-    padding: 12px 0;
     font-size: 1rem;
+    padding: 12px 0;
     background-color: transparent;
+  }
+
+  .primary-nav a.is-current-link {
+    color: #fabb69;
   }
 }
 
