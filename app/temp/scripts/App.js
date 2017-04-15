@@ -9972,8 +9972,8 @@
 	    _classCallCheck(this, RevealOnScroll);
 
 	    this.itemsToReveal = els;
-	    this.hideInitially();
 	    this.offsetPercentage = offset;
+	    this.hideInitially();
 	    this.createWaypoints();
 	  }
 
@@ -10799,6 +10799,7 @@
 	  function StickyHeader() {
 	    _classCallCheck(this, StickyHeader);
 
+	    this.lazyImages = (0, _jquery2.default)(".lazyload");
 	    this.siteHeader = (0, _jquery2.default)(".site-header");
 	    this.headerTriggerElement = (0, _jquery2.default)(".large-hero__title");
 	    this.createHeaderWaypoint();
@@ -10806,9 +10807,17 @@
 	    this.headerLinks = (0, _jquery2.default)(".primary-nav a");
 	    this.createPageSectionWaypoints();
 	    this.addSmoothScrolling();
+	    this.refreshWaypoints();
 	  }
 
 	  _createClass(StickyHeader, [{
+	    key: 'refreshWaypoints',
+	    value: function refreshWaypoints() {
+	      this.lazyImages.load(function () {
+	        Waypoint.refreshAll();
+	      });
+	    }
+	  }, {
 	    key: 'addSmoothScrolling',
 	    value: function addSmoothScrolling() {
 	      this.headerLinks.smoothScroll();
@@ -11246,14 +11255,16 @@
 	    value: function events() {
 	      // clicking the open modal button
 	      this.openModalButton.click(this.openModal.bind(this));
+
 	      // clicking the x close modal button
 	      this.closeModalButton.click(this.closeModal.bind(this));
+
 	      // pushes any key
-	      (0, _jquery2.default)(document).keyup(this.keyPresssHandler.bind(this));
+	      (0, _jquery2.default)(document).keyup(this.keyPressHandler.bind(this));
 	    }
 	  }, {
-	    key: "keyPresssHandler",
-	    value: function keyPresssHandler(e) {
+	    key: "keyPressHandler",
+	    value: function keyPressHandler(e) {
 	      if (e.keyCode == 27) {
 	        this.closeModal();
 	      }
